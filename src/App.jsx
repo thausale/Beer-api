@@ -1,10 +1,12 @@
-import { useState } from "react";
-import "./App.css";
+import './App.css';
+import BeerNavbar from './components/BeerNavbar.jsx';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <>
+      <BeerNavbar />
+    </>
+  );
 }
 
 export default App;
