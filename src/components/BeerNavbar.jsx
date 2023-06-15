@@ -1,11 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav, Button } from 'react-bootstrap';
-import { useState } from 'react';
-import LoginModal from './LoginModal';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Nav, Button } from "react-bootstrap";
+import { useState } from "react";
+import LoginModal from "./LoginModal";
 
 function App() {
-
-    const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleLogin = () => {
     setShowModal(true);
@@ -18,10 +17,10 @@ function App() {
     <div className="App p-4">
       <Nav activeKey="/home">
         <Nav.Item>
-          <Nav.Link href="/home">Beers</Nav.Link>
+          <Nav.Link href="/beers">Beers</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link>Breweries</Nav.Link>
+          <Nav.Link href="/breweries">Breweries</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Button onClick={handleLogin}>Login</Button>

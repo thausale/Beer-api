@@ -1,11 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import { beerData } from "../../public/beerData";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import BeerNavbar from "../components/BeerNavbar";
 
 const BeerDetail = (props) => {
   // const id = props.id;
+  const { id } = useParams(); // Access the value of the "id" route parameter
 
   const [loading, setLoading] = useState(false);
 
@@ -34,30 +38,34 @@ const BeerDetail = (props) => {
   const beer = beerData[0];
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
-      {loading ? (
-        <p>Loading...</p>
-      ) : beer ? (
-        <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          />
-          <Card.Body>
-            <Card.Title>{beer.name}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Alcohol: {beer.alcohol}%
-            </Card.Subtitle>
-            <Card.Subtitle className="mb-2 text-muted">
-              Type: {beer.type}
-            </Card.Subtitle>
-            <Card.Text>{beer.description}</Card.Text>
-          </Card.Body>
-        </Card>
-      ) : (
-        <p>No beer found.</p>
-      )}
-    </div>
+    <>
+      <BeerNavbar />
+
+      <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
+        {loading ? (
+          <p>Loading...</p>
+        ) : beer ? (
+          <Card style={{ width: "18rem" }}>
+            <Card.Img
+              variant="top"
+              src="https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            />
+            <Card.Body>
+              <Card.Title>{beer.name}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                Alcohol: {beer.alcohol}%
+              </Card.Subtitle>
+              <Card.Subtitle className="mb-2 text-muted">
+                Type: {beer.type}
+              </Card.Subtitle>
+              <Card.Text>{beer.description}</Card.Text>
+            </Card.Body>
+          </Card>
+        ) : (
+          <p>No beer found.</p>
+        )}
+      </div>
+    </>
   );
 };
 
