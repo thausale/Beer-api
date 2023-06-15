@@ -13,7 +13,7 @@ export const breweries = [
         comment: "lekkere biertjes",
       },
       {
-        id: 1,
+        id: 2,
         name: "jefke",
         comment: "goeieuh biertjes",
       },
@@ -30,12 +30,12 @@ export const breweries = [
     url: "https://www.chimay.com/",
     comments: [
       {
-        id: 1,
+        id: 3,
         name: "Maria",
         comment: "Love the Trappist beers from Chimay!",
       },
       {
-        id: 1,
+        id: 4,
         name: "John",
         comment: "The Chimay Blue is my favorite!",
       },
@@ -52,12 +52,12 @@ export const breweries = [
     url: "https://www.duvel.com/",
     comments: [
       {
-        id: 1,
+        id: 5,
         name: "Sarah",
         comment: "Duvel is my go-to beer for special occasions!",
       },
       {
-        id: 1,
+        id: 6,
         name: "Mark",
         comment: "The Duvel Triple Hop is an absolute delight!",
       },
